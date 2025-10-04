@@ -120,51 +120,65 @@ body {
   margin-top:26px;
 }
 
+/* Tarjetas: versión clásica (título y descripción fuera de la imagen, overlay mínimo) */
 .card{
   position:relative;
   display:block;
   border-radius:var(--radius);
   overflow:hidden;
   background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
-  transition:transform .35s cubic-bezier(.2,.9,.2,1),box-shadow .35s;
+  transition:transform .25s ease,box-shadow .25s ease;
   will-change:transform;
   text-decoration:none;
   color:inherit;
-  min-height: 260px;
+  min-height: 0;
 }
 
 .card img{
   display:block;
   width:100%;
-  height:240px;
+  height:220px;
   object-fit:cover;
   transform-origin:center center;
-  transition:transform .6s ease;
+  transition:transform .45s ease;
 }
 
+/* Info container puesto fuera de la imagen para recuperar la versión inicial */
 .card .info{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
+  position:relative;
   padding:12px;
-  background:linear-gradient(180deg,transparent,rgba(2,6,12,0.7));
+  background:transparent;
   color:var(--accent);
-  backdrop-filter:blur(4px);
   font-size:0.95rem;
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
+  flex-direction:column;
+  gap:6px;
+  border-top:1px solid rgba(255,255,255,0.03);
 }
 
-.card .title{ font-weight:600; }
-.card .meta{ color:var(--muted); font-size:0.82rem; }
+.card .title{
+  font-weight:700;
+  font-size:1rem;
+  margin:0;
+  color:var(--accent);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
-/* Hover effects */
-.card:hover{ transform:translateY(-8px); box-shadow:var(--card-shadow); }
-.card:hover img{ transform:scale(1.05); }
-.card:focus-within{ outline:2px solid #ffffff11; transform:translateY(-6px); }
+.card .meta{
+  color:var(--muted);
+  font-size:0.86rem;
+  margin:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Hover effects (subtiles) */
+.card:hover{ transform:translateY(-6px); box-shadow:0 12px 28px rgba(2,6,12,0.45); }
+.card:hover img{ transform:scale(1.03); }
+.card:focus-within{ outline:2px solid #ffffff11; transform:translateY(-4px); }
 
 /* 6. Modal */
 .modal{
@@ -295,3 +309,4 @@ a:focus{ outline: 3px solid rgba(255,255,255,0.06); outline-offset:4px; border-r
 button{ font-family: var(--font-sans); }
 
 /* End of styles.css */
+
