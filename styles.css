@@ -121,6 +121,7 @@ body {
 }
 
 /* Tarjetas: versión clásica (título y descripción fuera de la imagen, overlay mínimo) */
+/* Tarjetas: versión clásica (título y descripción fuera de la imagen, overlay mínimo) */
 .card{
   position:relative;
   display:block;
@@ -309,4 +310,5 @@ a:focus{ outline: 3px solid rgba(255,255,255,0.06); outline-offset:4px; border-r
 button{ font-family: var(--font-sans); }
 
 /* End of styles.css */
+
 
