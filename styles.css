@@ -309,6 +309,66 @@ a{ color:inherit; }
 a:focus{ outline: 3px solid rgba(255,255,255,0.06); outline-offset:4px; border-radius:6px; }
 button{ font-family: var(--font-sans); }
 
+/* Fix modal mobile: apilar imagen y meta y evitar overflow */
+@media (max-width:820px) {
+  .modal-content {
+    flex-direction: column;
+    padding: 14px;
+    align-items: stretch;
+    width: calc(100% - 24px); /* deja márgenes laterales */
+    max-width: 760px;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .modal-body img {
+    width: 100%;
+    height: auto;
+    max-height: 56vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+  }
+
+  .meta {
+    width: 100%;
+    padding: 6px 0 0 0;
+    box-sizing: border-box;
+  }
+
+  .meta h2 { word-break: break-word; font-size: 1.05rem; }
+  .meta .desc { word-break: break-word; }
+  .meta .roles { margin-top: 10px; }
+
+  /* Botón Ver publicación como bloque completo en móvil */
+  .external {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Asegurar que no haya margen lateral en el contenido que provoque scroll */
+  .modal-content,
+  .modal-body,
+  .meta,
+  .external {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* End of styles.css */
+
 
 
